@@ -1,0 +1,60 @@
+:host {
+  margin-top: 10px;
+}
+
+$color-accent: #3EA85E;
+
+.title {
+  font-family: 'Luckiest Guy', cursive;
+
+  h1 {
+    font-size: 72px;
+    margin: 0;
+    background: -webkit-linear-gradient(#fff, #77a9fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+
+    &:after {
+      align-content: center;
+      background: none;
+      content: attr(data-text);
+      left: 0;
+      position: absolute;
+      text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  div {
+    font-size: xx-large;
+    color: #92c7f9;
+    text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+  }
+}
+
+.call-us {
+  font-size: xx-large;
+  text-align: center;
+
+  .action {
+    font-size: smaller;
+    color: $color-accent;
+  }
+
+  .phone {
+    color: #AAD5F8;
+    font-size: larger;
+  }
+}
+
+nav {
+  margin: 30px 0;
+
+  a {
+    color: $color-accent;
+    text-transform: uppercase;
+  }
+}

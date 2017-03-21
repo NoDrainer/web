@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Lovers+Quarrel');
+
+$color-accent: #F5D000;
+
+html {
+  height: 100%;
+  background-color: #103f54;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  color: white;
+  font-size: 14pt;
+}
+
+h2 {
+  color: $color-accent;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px;
+
+  .accent {
+    color: #dc7c00;
+  }
+}
+
+p {
+  .accent {
+    color: $color-accent;
+  }
+}
+
+blockquote {
+  font-family: 'Lovers Quarrel', cursive;
+  font-size: 37pt;
+  margin: 20px;
+  text-align: center;
+}
+
+main /deep/ {
+  img {
+    max-width: 100%;
+  }
+
+  p.action {
+    text-align: center;
+    font-size: xx-large;
+    color: #87C59A;
+    margin: 0 80px 20px;
+  }
+}
+
+swiper {
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+[val-message] {
+  color: red;
+}

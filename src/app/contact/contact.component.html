@@ -1,0 +1,42 @@
+<div fxLayout>
+  <div fxFlex="40">
+    <p>Russ K</p>
+  </div>
+
+  <div fxFlex>
+    <form novalidate [formGroup]="contactForm" (ngSubmit)="contact()">
+      <div class="control-group">
+        <input type="text" formControlName="name" placeholder="Name" />
+        <div [val-messages]="contactForm.get('name')">
+          <span val-message="required">Please provide your name</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <input type="email" formControlName="email" placeholder="Email" />
+        <div [val-messages]="contactForm.get('email')">
+          <span val-message="required">Please provide email address</span>
+          <span val-message="email">Please provide valid email address</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <input type="text" formControlName="subject" placeholder="Subject" />
+        <div [val-messages]="contactForm.get('subject')">
+          <span val-message="required">Please provide reason for contacting</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <textarea formControlName="message" placeholder="Message"></textarea>
+        <div [val-messages]="contactForm.get('message')">
+          <span val-message="required">Please write your message</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</div>

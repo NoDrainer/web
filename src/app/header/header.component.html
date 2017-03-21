@@ -1,0 +1,25 @@
+<div fxLayout fxLayoutAlign="center start">
+  <div fxFlex.xs="100%" fxFlex="50%">
+    <div fxLayout fxLayoutAlign="space-between center">
+      <img src="assets/logo.png" alt="logo" />
+
+      <div class="title" fxLayout="column" fxLayoutAlign="start center">
+        <h1 data-text="No Drainer">No Drainer</h1>
+        <div>Water Purification Services</div>
+      </div>
+
+      <div class="call-us">
+        <div class="action">call today for a free estimate</div>
+        <div class="phone">602.791.3230</div>
+      </div>
+    </div>
+
+    <nav fxLayout fxLayoutAlign="space-around center">
+      <a [routerLink]="['']">Home</a>
+      <a [routerLink]="['about']">About us</a>
+      <a [routerLink]="['testimonials']">Testimonials</a>
+      <a [routerLink]="['testing']">Water testing</a>
+      <a [routerLink]="['contact']">Contact us</a>
+    </nav>
+  </div>
+</div>
