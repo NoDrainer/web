@@ -1,13 +1,23 @@
 <div fxLayout="column" fxFlexFill>
-  <nd-header></nd-header>
+  <div>
+    <div fxLayout fxLayoutAlign="center start">
+      <div fxFlex="100%" fxFlex.gt-md="75%" fxFlex.gt-lg="50%">
+        <nd-header></nd-header>
+      </div>
+    </div>
+  </div>
 
   <div fxFlex>
     <div fxLayout fxLayoutAlign="center start" fxFlexFill>
-      <main fxFlex.xs="100%" fxFlex="50%" fxFlexFill>
+      <main fxFlex="100%" fxFlex.gt-md="75%" fxFlex.gt-lg="50%">
         <router-outlet></router-outlet>
       </main>
     </div>
   </div>
 
-  <nd-footer></nd-footer>
+  <div fxLayout fxLayoutAlign="center start">
+    <div fxFlex="100%" fxFlex.gt-md="75%" fxFlex.gt-lg="50%">
+      <nd-footer></nd-footer>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-<swiper [config]="config" class="responsive">
+<swiper [config]="config" class="responsive" fxHide.xs fxHide.sm>
     <div class="swiper-wrapper">
     <div class="swiper-slide" *ngFor="let img of images">
       <img [attr.data-src]="img" class="swiper-lazy">

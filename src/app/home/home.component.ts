@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     prevButton: '.swiper-button-prev',
     spaceBetween: 30,
     loop: true,
-    autoplay: 6000,
+    //autoplay: 6000,
     autoplayDisableOnInteraction: false,
     preloadImages: false,
     lazyLoading: true,

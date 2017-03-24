@@ -34,8 +34,9 @@
         </div>
       </div>
 
-      <div class="action">
-        <button type="submit">Send</button>
+      <div class="action" fxLayout fxLayoutAlign="start space-between">
+        <span fxFlex>{{feedback}}</span>
+        <button type="submit" [disabled]="isLoading">{{isLoading ? 'Sending...' : 'Send'}}</button>
       </div>
     </form>
   </div>

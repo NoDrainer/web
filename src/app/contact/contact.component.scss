@@ -59,8 +59,6 @@
 }
 
 .action {
-  text-align: right;
-
   button {
     background-color: rgba(127, 190, 241, 0.97);
     border: 0;
@@ -68,5 +66,10 @@
     cursor: pointer;
     border-radius: 5px;
     padding: 10px 20px;
+
+    &:hover {
+      background-color: #55a9ec;
+      color: #fff;
+    }
   }
 }

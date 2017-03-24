@@ -5,33 +5,41 @@
 $color-accent: #3EA85E;
 
 .title {
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Scriptorama';
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
 
-  h1 {
-    font-size: 72px;
-    margin: 0;
-    background: -webkit-linear-gradient(#fff, #77a9fd);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
+  div.h1-wrapper {
+    transform: scaleY(1.4);
 
-    &:after {
-      align-content: center;
-      background: none;
-      content: attr(data-text);
-      left: 0;
-      position: absolute;
-      text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-      top: 0;
-      z-index: -1;
+    h1 {
+      font-size: 3em;
+      white-space: nowrap;
+      margin: 0;
+      background: -webkit-linear-gradient(#fff, #598df5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+
+      &:after {
+        align-content: center;
+        background: none;
+        content: attr(data-text);
+        left: 0;
+        position: absolute;
+        text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+        top: 0;
+        z-index: -1;
+      }
     }
   }
 
-  div {
-    font-size: xx-large;
+  div.desc {
+    font-size: 1.7em;
     color: #92c7f9;
-    text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+    text-shadow: -0.2px 0 white, 0 0.2px white, 0.2px 0 white, 0 -0.2px white;
+    text-align: center;
   }
 }
 
@@ -51,10 +59,41 @@ $color-accent: #3EA85E;
 }
 
 nav {
-  margin: 30px 0;
+  margin: 20px 0 0 0;
 
   a {
     color: $color-accent;
     text-transform: uppercase;
+    padding: 10px 20px;
+    white-space: nowrap;
+
+    &.active {
+      background-color: #236ca0;
+      color: white;
+    }
+
+    &:hover:not(.active) {
+      background-color: #0f5180;
+    }
   }
+
+  &.mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #0d2f3e;
+    margin: 0;
+
+    a.active {
+      background-color: #103f54;
+    }
+  }
+}
+
+.hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
 }
