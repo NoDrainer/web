@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "angular2-useful-swiper": "^3.0.0",
+    "angulartics2": "^1.6.4",
     "core-js": "^2.4.1",
     "ngx-messages": "^0.1.4",
     "rxjs": "^5.1.0",

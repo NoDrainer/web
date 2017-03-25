@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { Angulartics2 } from 'angulartics2';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -13,7 +14,7 @@ export class ContactComponent implements OnInit {
   feedback: string;
   isLoading = false;
 
-  constructor(private _fb: FormBuilder, private http: Http) { }
+  constructor(private _fb: FormBuilder, private http: Http, private angulartics2: Angulartics2) { }
 
   ngOnInit() {
     this.contactForm = this._fb.group({
@@ -33,6 +34,7 @@ export class ContactComponent implements OnInit {
           if (x.status === 200) {
             this.feedback = 'Your message is on its way';
             this.contactForm.reset();
+            this.angulartics2.eventTrack.next({ action: 'contact' });
           } else {
             this.feedback = 'Something went wrong';
           }

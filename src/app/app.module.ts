@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SwiperModule } from 'angular2-useful-swiper';
 import { NgxMessagesModule } from 'ngx-messages';
+import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,7 +35,8 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     FlexLayoutModule,
     SwiperModule,
-    NgxMessagesModule
+    NgxMessagesModule,
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
   providers: [],
   bootstrap: [AppComponent]
