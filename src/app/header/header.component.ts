@@ -7,18 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  menuIsVisible = false;
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  hideMenu() {
-    this.menuIsVisible = false;
-  }
-
-  showMenu() {
-    this.menuIsVisible = true;
   }
 }

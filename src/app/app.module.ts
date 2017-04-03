@@ -3,7 +3,12 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SwiperModule } from 'angular2-useful-swiper';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MdCardModule,
+  MdButtonModule,
+  MdMenuModule
+} from '@angular/material';
 import { NgxMessagesModule } from 'ngx-messages';
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
@@ -30,12 +35,15 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
     FlexLayoutModule,
-    SwiperModule,
     NgxMessagesModule,
+    MdCardModule,
+    MdButtonModule,
+    MdMenuModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
   providers: [],

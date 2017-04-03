@@ -1,13 +1,15 @@
 <div fxLayout="column" fxLayout.gt-sm fxLayoutAlign="space-between center">
-  <img src="assets/logo.png" alt="logo" />
+  <div fxLayout fxLayoutAlign="start center">
+    <img src="assets/logo.png" alt="logo" id="logo" />
 
-  <div class="title" fxLayout="column" fxLayoutAlign="start center">
-    <div class="h1-wrapper">
-      <h1 data-text="No Drainer">No Drainer</h1>
+    <div class="title" fxLayout="column" fxLayoutAlign="start center">
+      <div class="h1-wrapper">
+        <h1 data-text="No Drainer">No Drainer</h1>
+      </div>
+      <div class="desc">Water Purification Services</div>
     </div>
-    <div class="desc">Water Purification Services</div>
   </div>
-
+  
   <div class="call-us">
     <div class="action">call today for a free estimate</div>
     <div class="phone">602.791.3230</div>
@@ -22,13 +24,33 @@
 
 <nav fxLayout="column"
      fxLayout.gt-sm="row"
-     fxLayoutAlign.gt-sm="space-around center"
+     fxLayoutAlign.gt-sm="end center"
      fxShow.gt-sm="true"
-     [fxShow]="menuIsVisible"
      class.sm="mobile" class.xs="mobile">
-  <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="hideMenu()">Home</a>
-  <a [routerLink]="['about']" routerLinkActive="active" (click)="hideMenu()">About us</a>
-  <a [routerLink]="['testimonials']" routerLinkActive="active" (click)="hideMenu()">Testimonials</a>
-  <a [routerLink]="['testing']" routerLinkActive="active" (click)="hideMenu()">Water testing</a>
-  <a [routerLink]="['contact']" routerLinkActive="active" (click)="hideMenu()">Contact us</a>
+  <button md-button [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" type="button">Home</button>
+  <button md-button [routerLink]="['about']" routerLinkActive="active" type="button">About us</button>
+  <button md-button [routerLink]="['testimonials']" routerLinkActive="active" type="button">Testimonials</button>
+  <button md-button [routerLink]="['testing']" routerLinkActive="active" type="button">Water testing</button>
+  <button md-button [routerLink]="['contact']" routerLinkActive="active" type="button">Contact us</button>
+</nav>
+
+<nav>
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+    <md-icon>more_vert</md-icon>
+  </button>
+
+  <md-menu #menu="mdMenu">
+    <button md-menu-item>
+      <md-icon>dialpad</md-icon>
+      <span>Redial</span>
+    </button>
+    <button md-menu-item disabled>
+      <md-icon>voicemail</md-icon>
+      <span>Check voicemail</span>
+    </button>
+    <button md-menu-item>
+      <md-icon>notifications_off</md-icon>
+      <span>Disable alerts</span>
+    </button>
+  </md-menu>
 </nav>

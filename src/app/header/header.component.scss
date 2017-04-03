@@ -4,6 +4,10 @@
 
 $color-accent: #3EA85E;
 
+img#logo {
+  width: 80px;
+}
+
 .title {
   font-family: 'Scriptorama';
   text-transform: uppercase;
@@ -13,7 +17,7 @@ $color-accent: #3EA85E;
     transform: scaleY(1.4);
 
     h1 {
-      font-size: 3em;
+      font-size: 2em;
       white-space: nowrap;
       margin: 0;
       background: -webkit-linear-gradient(#fff, #598df5);
@@ -36,7 +40,7 @@ $color-accent: #3EA85E;
   }
 
   div.desc {
-    font-size: 1.7em;
+    font-size: 1.2em;
     color: #92c7f9;
     text-shadow: -0.2px 0 white, 0 0.2px white, 0.2px 0 white, 0 -0.2px white;
     text-align: center;
