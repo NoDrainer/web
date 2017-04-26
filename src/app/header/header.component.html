@@ -1,56 +1,45 @@
 <div fxLayout="column" fxLayout.gt-sm fxLayoutAlign="space-between center">
-  <div fxLayout fxLayoutAlign="start center">
-    <img src="assets/logo.png" alt="logo" id="logo" />
+  <div fxLayout fxLayout.xs="column" fxLayoutAlign="start center" id="logo-wrapper">
+    <img [@shrinkOnScroll]="shrinkState$ | async" src="assets/logo/apple-icon-120x120.png" alt="logo" id="logo" />
 
     <div class="title" fxLayout="column" fxLayoutAlign="start center">
       <div class="h1-wrapper">
-        <h1 data-text="No Drainer">No Drainer</h1>
+        <h1 class="unselectable">No Drainer</h1>
       </div>
-      <div class="desc">Water Purification Services</div>
+      <div class="desc unselectable">Water Purification Services</div>
     </div>
   </div>
   
-  <div class="call-us">
-    <div class="action">call today for a free estimate</div>
-    <div class="phone">602.791.3230</div>
+  <div fxLayout="column" fxLayoutAlign="start end">
+    <div class="call-us" fxHide.lt-sm fxLayout fxLayoutAlign="start center" fxLayoutGap="4px">
+      <div class="action">Call today for an estimate - </div>
+      <div class="phone">602.791.3230</div>
+    </div>
+
+    <nav fxLayout="column"
+        fxLayout.gt-sm="row"
+        fxLayoutAlign.gt-sm="end center"
+        fxShow.gt-sm="true"
+        fxHide>
+      <button md-button [routerLink]="['']" color="primary" routerLinkActive="mat-raised-button" [routerLinkActiveOptions]="{exact: true}" type="button">Home</button>
+      <button md-button [routerLink]="['about']" color="primary" routerLinkActive="mat-raised-button" type="button">About us</button>
+      <button md-button [routerLink]="['testimonials']" color="primary" routerLinkActive="mat-raised-button" type="button">Testimonials</button>
+      <button md-button [routerLink]="['testing']" color="primary" routerLinkActive="mat-raised-button" type="button">Water testing</button>
+      <button md-button [routerLink]="['contact']" color="primary" routerLinkActive="mat-raised-button" type="button">Contact us</button>
+    </nav>
   </div>
 </div>
 
-<button type="button" class="hamburger" fxHide.gt-sm (click)="showMenu()">
-  <div class="hamburger-box">
-    <div class="hamburger-inner"></div>
-  </div>
-</button>
-
-<nav fxLayout="column"
-     fxLayout.gt-sm="row"
-     fxLayoutAlign.gt-sm="end center"
-     fxShow.gt-sm="true"
-     class.sm="mobile" class.xs="mobile">
-  <button md-button [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" type="button">Home</button>
-  <button md-button [routerLink]="['about']" routerLinkActive="active" type="button">About us</button>
-  <button md-button [routerLink]="['testimonials']" routerLinkActive="active" type="button">Testimonials</button>
-  <button md-button [routerLink]="['testing']" routerLinkActive="active" type="button">Water testing</button>
-  <button md-button [routerLink]="['contact']" routerLinkActive="active" type="button">Contact us</button>
-</nav>
-
-<nav>
+<nav fxHide.gt-sm class="mobile">
   <button md-icon-button [mdMenuTriggerFor]="menu">
     <md-icon>more_vert</md-icon>
   </button>
 
-  <md-menu #menu="mdMenu">
-    <button md-menu-item>
-      <md-icon>dialpad</md-icon>
-      <span>Redial</span>
-    </button>
-    <button md-menu-item disabled>
-      <md-icon>voicemail</md-icon>
-      <span>Check voicemail</span>
-    </button>
-    <button md-menu-item>
-      <md-icon>notifications_off</md-icon>
-      <span>Disable alerts</span>
-    </button>
+  <md-menu #menu="mdMenu" class="mobile-menu">
+    <button md-menu-item [routerLink]="['']" routerLinkActive="pimary" [routerLinkActiveOptions]="{exact: true}" type="button">Home</button>
+    <button md-menu-item [routerLink]="['about']" routerLinkActive="pimary" type="button">About us</button>
+    <button md-menu-item [routerLink]="['testimonials']" routerLinkActive="pimary" type="button">Testimonials</button>
+    <button md-menu-item [routerLink]="['testing']" routerLinkActive="pimary" type="button">Water testing</button>
+    <button md-menu-item [routerLink]="['contact']" routerLinkActive="pimary" type="button">Contact us</button>
   </md-menu>
 </nav>

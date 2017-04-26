@@ -1,43 +1,53 @@
-<div fxLayout>
-  <div fxFlex="40">
-    <p>Russ K</p>
+<section fxLayout fxLayoutAlign="center start">
+  <div fxFlex="100%" fxFlex.gt-sm="85%" fxFlex.gt-md="70%" fxFlex.gt-lg="50%">
+    <div id="tongue"></div>
+
+    <h2>Contact us</h2>
+
+    <div fxLayout="column" fxLayout.gt-xs="row">
+      <div fxFlex="40">
+        <p>Russ K.</p>
+        <p>Phone: 602.791.3230</p>
+      </div>
+
+      <div fxFlex>
+        <form novalidate [formGroup]="contactForm" (ngSubmit)="contact()" fxLayout="column">
+          <md-input-container>
+            <input mdInput formControlName="name" placeholder="Your Name">
+            <md-hint ngxErrors="name" align="end">
+              <span ngxError="required" when="touched">Please provide your name</span>
+            </md-hint>
+          </md-input-container>
+
+          <md-input-container>
+            <input mdInput formControlName="email" placeholder="Email" type="email">
+            <md-hint ngxErrors="email" align="end">
+              <span ngxError="required" when="touched">Please provide email address</span>
+              <span ngxError="email" when="touched">Please provide valid email address</span>
+            </md-hint>
+          </md-input-container>
+          
+          <md-input-container>
+            <input mdInput formControlName="subject" placeholder="Subject">
+            <md-hint ngxErrors="subject" align="end">
+              <span ngxError="required" when="touched">Please provide reason for contacting</span>
+            </md-hint>
+          </md-input-container>
+
+          <md-input-container>
+            <textarea mdInput formControlName="message" placeholder="Message" rows="3"></textarea>
+            <md-hint ngxErrors="message" align="end">
+              <span ngxError="required" when="touched">Please write your message</span>
+            </md-hint>
+          </md-input-container>
+
+          <br />
+          <div fxLayout fxLayoutAlign="start space-between">
+            <span fxFlex>{{feedback}}</span>
+            <button md-raised-button color="accent" type="submit" [disabled]="isLoading">{{isLoading ? 'Sending...' : 'Send'}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-
-  <div fxFlex>
-    <form novalidate [formGroup]="contactForm" (ngSubmit)="contact()">
-      <div class="control-group">
-        <input type="text" formControlName="name" placeholder="Name" />
-        <div [val-messages]="contactForm.get('name')">
-          <span val-message="required">Please provide your name</span>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <input type="email" formControlName="email" placeholder="Email" />
-        <div [val-messages]="contactForm.get('email')">
-          <span val-message="required">Please provide email address</span>
-          <span val-message="email">Please provide valid email address</span>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <input type="text" formControlName="subject" placeholder="Subject" />
-        <div [val-messages]="contactForm.get('subject')">
-          <span val-message="required">Please provide reason for contacting</span>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <textarea formControlName="message" placeholder="Message"></textarea>
-        <div [val-messages]="contactForm.get('message')">
-          <span val-message="required">Please write your message</span>
-        </div>
-      </div>
-
-      <div class="action" fxLayout fxLayoutAlign="start space-between">
-        <span fxFlex>{{feedback}}</span>
-        <button type="submit" [disabled]="isLoading">{{isLoading ? 'Sending...' : 'Send'}}</button>
-      </div>
-    </form>
-  </div>
-</div>
+</section>

@@ -1,6 +1,6 @@
 import { NoDrainerPage } from './app.po';
 
-describe('no-drainer App', () => {
+describe('No Drainer App', () => {
   let page: NoDrainerPage;
 
   beforeEach(() => {

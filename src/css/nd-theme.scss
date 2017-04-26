@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@import '_vars';
+
+@include mat-core();
+
+$nd-theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($nd-theme);

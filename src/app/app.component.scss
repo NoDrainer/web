@@ -1,13 +1,131 @@
+@import '~/../src/css/_vars';
+
+.water {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  //background-position-y: 100px;
+  background-attachment: fixed;
+
+  /* preload images for other pages */
+  &:before {
+    content: url(/assets/water/water6.jpg)
+            url(/assets/water/water1.jpg)
+            url(/assets/water/water3.jpg)
+            url(/assets/water/water2.jpg)
+            url(/assets/water/water7.jpg);
+    /* partial fallback */
+    background-image: url(/assets/water/water6.jpg);
+    visibility: hidden;
+    position: absolute;
+    left: -999em;
+  }
+}
+
 .header-wrap {
-  background-color: #236ca0;
+  background-color: white;
+
+  &#{"/deep/"} {
+    #logo {
+      width: 80px;
+    }
+  }
+
+  &.gt-sm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+
+    &#{"/deep/"} {
+      #logo {
+        width: auto;
+      }
+    }
+  }
 }
 
 .main-wrap {
-  //background-color: #f8f8f8;
+  .slogan {
+    display: none;
+  }
+
+  main {
+    &#{"/deep/"} {
+      section {
+        padding: 30px 10px;
+      }
+    }
+  }
+
+  &.gt-sm {
+    .slogan {
+      display: block;
+      position: fixed;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background-color: rgba(138, 206, 255, 0.27);
+      font-weight: bold;
+      font-size: 46pt;
+      line-height: 90px;
+      padding: 20px 0 90px 0;
+      text-shadow: 1px 1px 0px #fff;
+
+      span {
+        font-size: 62pt;
+        color: mat-color($primary, 700);
+        text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 0px 3px 3px #111;
+      }
+    }
+
+    main {
+      margin-top: 100vh;
+      position: relative;
+      z-index: 2;
+      background-color: white;
+      box-shadow: 0 -4px 5px #4e8eb9;
+      min-height: 200px;
+
+      &#{"/deep/"} {
+        section {
+          padding: 40px 0;
+        }
+
+        #tongue {
+          margin-top: -120px;
+          margin-left: -28px;
+          margin-right: -28px;
+          position: relative;
+          z-index: -1;
+          padding-top: 10px;
+
+          &:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            background-color: white;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            z-index: 0;
+            border-radius: 20px 20px 0 0;
+            box-shadow: -5px 0px 0px white, 5px 0px 0px white, 0px -4px 5px #4e8eb9;
+          }
+        }
+      }
+    }
+  }
 }
 
-main {
-  //background-color: #236ca0;
-  
-  padding: 20px;
-}
+

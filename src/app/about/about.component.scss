@@ -1,0 +1,9 @@
+@import '~/../src/css/_vars';
+
+#s-2 {
+  background-color: mat-color($accent, 200);
+
+  .accent {
+    color: white;
+  }
+}

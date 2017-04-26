@@ -1,23 +1,26 @@
+<div class="water"
+     *ngIf="media.isActive('gt-sm')"
+     [@water]="url$ | async"
+     parallax speed="4" [initialPosY]="100">
+</div>
+
+<div class="header-wrap" ngClass.gt-sm="gt-sm">
+  <nd-header></nd-header>
+</div>
+
 <div fxLayout="column" fxFlexFill>
-  <div class="header-wrap">
-    <div fxLayout fxLayoutAlign="center start">
-      <div fxFlex="100%" fxFlex.gt-md="75%" fxFlex.gt-lg="50%">
-        <nd-header></nd-header>
-      </div>
+  <div class="main-wrap" ngClass.gt-sm="gt-sm">
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <div class="slogan unselectable">
+      Never drain your pool again -<br />
+      <span color="primary">PURIFY</span> it!
     </div>
   </div>
 
-  <div fxFlex>
-    <div fxLayout fxLayoutAlign="center start" fxFlexFill class="main-wrap">
-      <main fxFlex="100%" fxFlex.gt-md="75%" fxFlex.gt-lg="50%">
-        <router-outlet></router-outlet>
-      </main>
-    </div>
-  </div>
+  <div fxFlex></div>
 
-  <div fxLayout fxLayoutAlign="center start">
-    <div fxFlex="100%" fxFlex.gt-md="75%" fxFlex.gt-lg="50%">
-      <nd-footer></nd-footer>
-    </div>
-  </div>
+  <nd-footer></nd-footer>
 </div>

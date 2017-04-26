@@ -1,0 +1,16 @@
+@import '~/../src/css/_vars';
+
+#s-2 {
+  background-color: mat-color($accent, 200);
+}
+
+#s-3 {
+  background-color: mat-color($accent, 700);
+  color: white;
+  padding: 0 20px;
+}
+
+.call-us {
+  font-size: 1.3em;
+  padding: 6px 16px;
+}

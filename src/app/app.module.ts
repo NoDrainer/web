@@ -7,9 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MdCardModule,
   MdButtonModule,
-  MdMenuModule
+  MdMenuModule,
+  MdInputModule,
+  MdIconModule
 } from '@angular/material';
-import { NgxMessagesModule } from 'ngx-messages';
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +23,7 @@ import { AboutComponent } from './about/about.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { WaterTestingComponent } from './water-testing/water-testing.component';
 import { ContactComponent } from './contact/contact.component';
+import { ng2parallax } from '../directives/parallax.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     TestimonialsComponent,
     WaterTestingComponent,
-    ContactComponent
+    ContactComponent,
+    ng2parallax
   ],
   imports: [
     BrowserModule,
@@ -40,10 +44,12 @@ import { ContactComponent } from './contact/contact.component';
     HttpModule,
     AppRoutingModule,
     FlexLayoutModule,
-    NgxMessagesModule,
+    NgxErrorsModule,
     MdCardModule,
     MdButtonModule,
     MdMenuModule,
+    MdInputModule,
+    MdIconModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
   providers: [],

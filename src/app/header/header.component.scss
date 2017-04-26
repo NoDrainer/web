@@ -1,103 +1,65 @@
-:host {
-  margin-top: 10px;
+@import '~/../src/css/_vars';
+
+:host > div {
+  padding: 20px;
+  box-shadow: 3px 3px 20px #064a7b;
 }
 
-$color-accent: #3EA85E;
-
-img#logo {
-  width: 80px;
-}
 
 .title {
   font-family: 'Scriptorama';
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
+  color: mat-color($primary);
 
   div.h1-wrapper {
     transform: scaleY(1.4);
+    margin-top: 15px;
 
     h1 {
       font-size: 2em;
       white-space: nowrap;
       margin: 0;
-      background: -webkit-linear-gradient(#fff, #598df5);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: relative;
-
-      &:after {
-        align-content: center;
-        background: none;
-        content: attr(data-text);
-        left: 0;
-        position: absolute;
-        text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
-        top: 0;
-        z-index: -1;
-      }
+      text-shadow: 0.5px 0.5px 0px #fff, -0.5px -0.5px 0px #fff, 0.5px 0.5px 3px #464646;
     }
   }
 
   div.desc {
-    font-size: 1.2em;
-    color: #92c7f9;
-    text-shadow: -0.2px 0 white, 0 0.2px white, 0.2px 0 white, 0 -0.2px white;
+    margin-top: 10px;
+    font-size: 1em;
     text-align: center;
+    white-space: nowrap;
   }
 }
 
 .call-us {
-  font-size: xx-large;
+  font-size: x-large;
   text-align: center;
 
   .action {
     font-size: smaller;
-    color: $color-accent;
+    white-space: nowrap;
   }
 
   .phone {
-    color: #AAD5F8;
-    font-size: larger;
+    color: mat-color($primary);
+    font-weight: bold;
+    margin-right: 15px;
   }
 }
 
 nav {
-  margin: 20px 0 0 0;
-
-  a {
-    color: $color-accent;
+  button {
+    //padding: 0 6px;
+    font-weight: bold;
     text-transform: uppercase;
-    padding: 10px 20px;
-    white-space: nowrap;
-
-    &.active {
-      background-color: #236ca0;
-      color: white;
-    }
-
-    &:hover:not(.active) {
-      background-color: #0f5180;
-    }
+    min-width: auto;
   }
 
   &.mobile {
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
-    background-color: #0d2f3e;
-    margin: 0;
-
-    a.active {
-      background-color: #103f54;
-    }
+    margin: 10px;
   }
-}
-
-.hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 10px;
 }
