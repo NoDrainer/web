@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll')
   scroll() {
-    let distanceY = window.pageYOffset || document.documentElement.scrollTop;
+    const distanceY = window.pageYOffset || document.documentElement.scrollTop;
     this.shrinkSubject.next(distanceY < this.shrinkOn ? 'normal' : 'small');
   }
 

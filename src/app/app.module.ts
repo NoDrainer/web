@@ -23,7 +23,7 @@ import { AboutComponent } from './about/about.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { WaterTestingComponent } from './water-testing/water-testing.component';
 import { ContactComponent } from './contact/contact.component';
-import { ng2parallax } from '../directives/parallax.directive';
+import { Ng2parallax } from '../directives/parallax.directive';
 import { ScrollToService } from '../services/scrollTo';
 
 @NgModule({
@@ -36,7 +36,7 @@ import { ScrollToService } from '../services/scrollTo';
     TestimonialsComponent,
     WaterTestingComponent,
     ContactComponent,
-    ng2parallax
+    Ng2parallax
   ],
   imports: [
     BrowserModule,

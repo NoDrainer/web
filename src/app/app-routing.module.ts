@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'testimonials', component: TestimonialsComponent },
   { path: 'testing', component: WaterTestingComponent },
   { path: 'contact', component: ContactComponent },
-  { path: "**", redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -26,13 +26,13 @@ export function firstLoad(from, to) { return from == null; }
       transition(firstLoad, [
         animate(1000, style({ opacity: 1 })),
       ]),
-      
+
       transition('* => s-', [
         animate('.5s ease-out', style({ opacity: 0 })),
         animate(1, style({ backgroundImage: 'url(/assets/water/water6.jpg)' })),
         animate('.5s ease-in')
       ]),
-      
+
       transition('* => s-about', [
         animate('.5s ease-out', style({ opacity: 0 })),
         animate(1, style({ backgroundImage: 'url(/assets/water/water1.jpg)' })),
@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
       .filter(x => x instanceof NavigationEnd)
       .map((x: NavigationEnd) => x.url.replace('/', 's-'))
       .do(x => {
-        let scrollToPos = this.isFirstLoad ? 0 : 215;
+        const scrollToPos = this.isFirstLoad ? 0 : 215;
         this.scrollToService.scrollTo(scrollToPos, 400);
         if (this.isFirstLoad) {
           this.isFirstLoad = false;

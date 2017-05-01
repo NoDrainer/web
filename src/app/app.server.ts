@@ -8,16 +8,14 @@ export class ScrollToServiceMock { }
 
 @NgModule({
   imports: [
-	  ServerModule,
-	  AppModule
+    ServerModule,
+    AppModule
   ],
   bootstrap: [
-	  AppComponent
+    AppComponent
   ],
   providers: [
     { provide: ScrollToService, useClass: ScrollToServiceMock }
   ]
 })
 export class AppServerModule {}
-
-

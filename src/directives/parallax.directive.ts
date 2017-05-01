@@ -1,12 +1,15 @@
 import { Directive, AfterViewInit, ElementRef, Input, HostListener, Renderer } from '@angular/core';
-declare var window:any;
+declare var window: any;
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '[parallax]',
 })
-export class ng2parallax implements AfterViewInit {
+// tslint:disable-next-line:directive-class-suffix
+export class Ng2parallax implements AfterViewInit {
   @Input('speed') speed: number;
-  @Input('initialPosY') initialPosY: number = 0;
+  @Input('initialPosY') initialPosY = 0;
+  private element: HTMLElement;
 
   @HostListener('window:touchmove')
   touchmove() {
@@ -18,8 +21,6 @@ export class ng2parallax implements AfterViewInit {
     this.execute();
   }
 
-  private element: HTMLElement;
-
   constructor(el: ElementRef, private renderer: Renderer) {
     this.element = el.nativeElement;
   }
@@ -29,17 +30,17 @@ export class ng2parallax implements AfterViewInit {
   }
 
   private execute() {
-    let scrollTop = (window.pageYOffset !== undefined)
+    const scrollTop = (window.pageYOffset !== undefined)
       ? window.pageYOffset
       : window(
         document.documentElement ||
         document.body.parentNode ||
         document.body
       ).scrollTop;
-    
-    let speed = (scrollTop / this.speed) * -1;
 
-    let pos = speed === 0
+    const speed = (scrollTop / this.speed) * -1;
+
+    const pos = speed === 0
       ? this.initialPosY + 'px'
       : (this.initialPosY + speed) + 'px';
 
