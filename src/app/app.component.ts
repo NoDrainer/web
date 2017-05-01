@@ -4,6 +4,7 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
 import { ObservableMedia } from '@angular/flex-layout';
 import { Angulartics2GoogleAnalytics, Angulartics2 } from 'angulartics2';
 import { environment } from '../environments/environment';
+import { ScrollToService } from '../services/scrollTo';
 import { Observable } from 'rxjs/Observable';
 
 export function firstLoad(from, to) { return from == null; }
@@ -66,7 +67,8 @@ export class AppComponent implements OnInit {
     angulartics2: Angulartics2,
     angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
     private router: Router,
-    public media: ObservableMedia
+    public media: ObservableMedia,
+    private scrollToService: ScrollToService
   ) {
     if (!environment.production) {
       angulartics2.developerMode(true);
@@ -79,87 +81,10 @@ export class AppComponent implements OnInit {
       .map((x: NavigationEnd) => x.url.replace('/', 's-'))
       .do(x => {
         let scrollToPos = this.isFirstLoad ? 0 : 215;
-        scrollTo(scrollToPos, 400);
+        this.scrollToService.scrollTo(scrollToPos, 400);
         if (this.isFirstLoad) {
           this.isFirstLoad = false;
         }
       });
   }
-
-  private scrollToTop(scrollDuration: number) {
-    let cosParameter = window.scrollY / 2,
-      scrollCount = 0,
-      oldTimestamp = performance.now();
-
-    function step(newTimestamp) {
-      scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
-      if (scrollCount >= Math.PI) window.scrollTo(0, 0);
-      if (window.scrollY === 0) return;
-      window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
-      oldTimestamp = newTimestamp;
-      window.requestAnimationFrame(step);
-    }
-    window.requestAnimationFrame(step);
-  }
-}
-
-function easeInOutQuad(t, b, c, d) {
-  t /= d/2;
-  if (t < 1) {
-    return c/2*t*t + b
-  }
-  t--;
-  return -c/2 * (t*(t-2) - 1) + b;
-};
-
-function easeInCubic(t, b, c, d) {
-  var tc = (t/=d)*t*t;
-  return b+c*(tc);
-};
-
-function inOutQuintic(t, b, c, d) {
-  var ts = (t/=d)*t,
-  tc = ts*t;
-  return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
-};
-
-// requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
-var requestAnimFrame = (function(){
-  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || (<any>window).mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
-})();
-
-function scrollTo(to, duration, callback?) {
-  // because it's so fucking difficult to detect the scrolling element, just move them all
-  function move(amount) {
-    document.documentElement.scrollTop = amount;
-    (<any>document.body.parentNode).scrollTop = amount;
-    document.body.scrollTop = amount;
-  }
-  function position() {
-    return document.documentElement.scrollTop || (<any>document.body.parentNode).scrollTop || document.body.scrollTop;
-  }
-  var start = position(),
-    change = to - start,
-    currentTime = 0,
-    increment = 20;
-  duration = (typeof (duration) === 'undefined') ? 500 : duration;
-  
-  var animateScroll = function() {
-    // increment the time
-    currentTime += increment;
-    // find the value with the quadratic in-out easing function
-    var val = easeInOutQuad(currentTime, start, change, duration);
-    // move the document.body
-    move(val);
-    // do the animation unless its over
-    if (currentTime < duration) {
-      requestAnimFrame(animateScroll);
-    } else {
-      if (callback && typeof(callback) === 'function') {
-        // the animation is done so lets callback
-        callback();
-      }
-    }
-  };
-  animateScroll();
 }
