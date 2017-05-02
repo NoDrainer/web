@@ -26,3 +26,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Running unit tests
 
 * `yarn test`
+
+## Deploy to Production
+
+Project is hosted on AWS.S3 and uses AWS.CloudFront. Deploying requires AWS CLI installed and configured.
+
+### Prerequisites
+
+* [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) installed locally
+* Configure AWS defaults: `aws configure`
+* AWS preview.cloudfront enabled: `aws configure set preview.cloudfront true`
+
+### Deploy
+
+The following command builds project in production mode, uploads files to S3, and invalidates cache for the index.html:
+
+```shell
+yarn run deploy
+```
+
