@@ -1,4 +1,4 @@
-@import '~/../src/css/_vars';
+@import '../../css/_vars.scss';
 
 :host > div {
   padding: 20px;
@@ -45,6 +45,7 @@
     color: mat-color($primary);
     font-weight: bold;
     margin-right: 15px;
+    text-decoration: none;
   }
 }
 

@@ -19,8 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "nd",
       "styles": [
-        "css/nd-theme.scss",
-        "css/styles.scss"
+        "css/styles.scss",
+        "css/nd-theme.scss"
       ],
       "scripts": [
       ],

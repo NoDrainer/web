@@ -39,7 +39,7 @@ import { ScrollToService } from '../services/scrollTo';
     Ng2parallax
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'no-drainer' }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpModule,

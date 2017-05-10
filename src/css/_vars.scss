@@ -1,5 +1,5 @@
 @import '~@angular/material/theming';
 
-$primary: mat-palette($mat-indigo, 700, 500, 900);
-$accent: mat-palette($mat-blue, 600, 400, 800);
+$primary: mat-palette($mat-indigo, 700, 500, 900); //#303f9f
+$accent: mat-palette($mat-blue, 600, 400, 800); //#1e88e5
 $warn: mat-palette($mat-red);
