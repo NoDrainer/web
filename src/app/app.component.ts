@@ -23,7 +23,7 @@ export function firstLoad(from, to) { return from == null; }
       state('s-testing', style({ backgroundImage: 'url(/assets/water/water2.jpg)' })),
       state('s-contact', style({ backgroundImage: 'url(/assets/water/water7.jpg)' })),
 
-      transition(firstLoad, [
+      transition(<any>firstLoad, [
         animate(1000, style({ opacity: 1 })),
       ]),
 

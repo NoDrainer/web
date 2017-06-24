@@ -1,0 +1,30 @@
+@import '../../css/_vars';
+
+$base-path: '/assets/reviews/';
+
+md-card:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+md-card-header {
+  line-height: 18px;
+}
+
+[md-card-avatar] {
+  background-size: cover;
+  
+  &.rev-0 {
+    background-image: url($base-path + '0.jpg');
+  }
+}
+
+.mat-card-content {
+  font-size: 14px;
+}
+
+.super-action {
+  text-align: center;
+  color: mat-color($primary);
+  font-size: -webkit-xxx-large;
+  line-height: 1.2em;
+}
