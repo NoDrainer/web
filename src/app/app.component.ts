@@ -78,6 +78,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.url$ = this.router.events
       .filter(x => x instanceof NavigationEnd)
+      .debounceTime(1)
       .map((x: NavigationEnd) => x.url.replace('/', 's-'))
       .do(x => {
         const scrollToPos = this.isFirstLoad ? 0 : 215;

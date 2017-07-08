@@ -62,6 +62,27 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="assets/logo/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ssr temp fixes */
+    [ng-reflect-layout], [ng-reflect-layout="row"], [ng-reflect-layout-gt-sm] {
+      flex-direction: row;
+      -webkit-box-orient: horizontal;
+    }
+
+    [ng-reflect-layout="column"] {
+      flex-direction: column;
+      -webkit-box-orient: vertical;
+    }
+
+    [ng-reflect-align="space-between center"] {
+      justify-content: space-between;
+      align-content: center;
+      align-items: center;
+      -webkit-box-align: center;
+    }
+    /* end of ssr temp fixes */
+  </style>
 </head>
 <body>
   <script>

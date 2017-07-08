@@ -25,6 +25,7 @@ import { WaterTestingComponent } from './water-testing/water-testing.component';
 import { ContactComponent } from './contact/contact.component';
 import { Ng2parallax } from '../directives/parallax.directive';
 import { ScrollToService } from '../services/scrollTo';
+import { TestimonialsResolver } from './services/testimonialsResolver';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ScrollToService } from '../services/scrollTo';
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
   providers: [
-    ScrollToService
+    ScrollToService,
+    TestimonialsResolver
   ],
   bootstrap: [AppComponent]
 })

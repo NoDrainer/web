@@ -8,7 +8,7 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/cli@>=1.1.0":
+"@angular/cli@>=1.1.0", "@angular/cli@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.1.3.tgz#01c414aa838d1862961a8e50823a0abc263f6639"
   dependencies:
@@ -67,70 +67,6 @@
     webpack "~2.4.0"
     webpack-dev-middleware "^1.10.2"
     webpack-dev-server "~2.4.5"
-    webpack-merge "^2.4.0"
-    zone.js "^0.8.4"
-  optionalDependencies:
-    node-sass "^4.3.0"
-
-"@angular/cli@^1.0.1":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.0.3.tgz#73a4b43f2ea8e720f52f1041e5e833cae1fb291f"
-  dependencies:
-    "@ngtools/json-schema" "1.0.9"
-    "@ngtools/webpack" "1.3.1"
-    autoprefixer "^6.5.3"
-    chalk "^1.1.3"
-    common-tags "^1.3.1"
-    css-loader "^0.28.1"
-    cssnano "^3.10.0"
-    debug "^2.1.3"
-    denodeify "^1.2.1"
-    diff "^3.1.0"
-    ember-cli-normalize-entity-name "^1.0.0"
-    ember-cli-string-utils "^1.0.0"
-    exports-loader "^0.6.3"
-    extract-text-webpack-plugin "^2.1.0"
-    file-loader "^0.10.0"
-    fs-extra "^2.0.0"
-    get-caller-file "^1.0.0"
-    glob "^7.0.3"
-    html-webpack-plugin "^2.19.0"
-    inflection "^1.7.0"
-    inquirer "^3.0.0"
-    isbinaryfile "^3.0.0"
-    istanbul-instrumenter-loader "^2.0.0"
-    json-loader "^0.5.4"
-    karma-sourcemap-loader "^0.3.7"
-    karma-webpack "^2.0.0"
-    less "^2.7.2"
-    less-loader "^4.0.2"
-    lodash "^4.11.1"
-    minimatch "^3.0.3"
-    node-modules-path "^1.0.0"
-    nopt "^4.0.1"
-    opn "4.0.2"
-    portfinder "~1.0.12"
-    postcss-loader "^1.3.3"
-    postcss-url "^5.1.2"
-    raw-loader "^0.5.1"
-    resolve "^1.1.7"
-    rimraf "^2.5.3"
-    rsvp "^3.0.17"
-    rxjs "^5.0.1"
-    sass-loader "^6.0.3"
-    script-loader "^0.7.0"
-    semver "^5.1.0"
-    silent-error "^1.0.0"
-    source-map-loader "^0.1.5"
-    style-loader "^0.13.1"
-    stylus "^0.54.5"
-    stylus-loader "^3.0.1"
-    temp "0.8.3"
-    typescript ">=2.0.0 <2.3.0"
-    url-loader "^0.5.7"
-    walk-sync "^0.3.1"
-    webpack "~2.2.0"
-    webpack-dev-server "~2.4.2"
     webpack-merge "^2.4.0"
     zone.js "^0.8.4"
   optionalDependencies:
@@ -223,22 +159,9 @@
   dependencies:
     tsickle "^0.21.0"
 
-"@ngtools/json-schema@1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.0.9.tgz#19e46db409c66b4c43841eab514ff9640871affc"
-
 "@ngtools/json-schema@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
-
-"@ngtools/webpack@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.3.1.tgz#12149b6b9cb3bf858f4b2ae9650456e17674d2eb"
-  dependencies:
-    enhanced-resolve "^3.1.0"
-    loader-utils "^1.0.2"
-    magic-string "^0.19.0"
-    source-map "^0.5.6"
 
 "@ngtools/webpack@1.4.2":
   version "1.4.2"
@@ -333,7 +256,7 @@ acorn-dynamic-import@^2.0.0:
   dependencies:
     acorn "^4.0.3"
 
-acorn@^4.0.3, acorn@^4.0.4:
+acorn@^4.0.3:
   version "4.0.11"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.11.tgz#edcda3bd937e7556410d42ed5860f67399c794c0"
 
@@ -387,9 +310,9 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular-ssr@^0.10.16:
-  version "0.10.16"
-  resolved "https://registry.yarnpkg.com/angular-ssr/-/angular-ssr-0.10.16.tgz#3230d28d52b8e463290169dec0ac196d979a175c"
+angular-ssr@^0.10.22:
+  version "0.10.22"
+  resolved "https://registry.yarnpkg.com/angular-ssr/-/angular-ssr-0.10.22.tgz#a2dea929afa3c58acaf26a4f0f76ed20f83aa1b2"
   dependencies:
     "@angular/cli" ">=1.1.0"
     "@types/chalk" "^0.4.31"
@@ -583,7 +506,7 @@ async-foreach@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/async-foreach/-/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
 
-async@^0.9.0, async@~0.9.0:
+async@^0.9.0:
   version "0.9.2"
   resolved "https://registry.yarnpkg.com/async/-/async-0.9.2.tgz#aea74d5e61c1f899613bf64bda66d4c78f2fd17d"
 
@@ -623,6 +546,19 @@ aws-sign2@~0.6.0:
 aws4@^1.2.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+
+axios@contentful/axios#fix/https-via-http-proxy:
+  version "0.16.3"
+  resolved "https://codeload.github.com/contentful/axios/tar.gz/486c956313b4937d83202ae72304d3eb210487bb"
+  dependencies:
+    follow-redirects "^1.2.3"
+    is-buffer "^1.1.5"
+
+axios@~0.15.3:
+  version "0.15.3"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.15.3.tgz#2c9d638b2e191a08ea1d6cc988eadd6ba5bdc053"
+  dependencies:
+    follow-redirects "1.0.0"
 
 babel-code-frame@^6.11.0, babel-code-frame@^6.22.0:
   version "6.22.0"
@@ -1289,6 +1225,27 @@ content-type@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.2.tgz#b7d113aee7a8dd27bd21133c4dc2529df1721eed"
 
+contentful-sdk-core@^3.10.1:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/contentful-sdk-core/-/contentful-sdk-core-3.12.2.tgz#009797b0b2310ca97727c11f8deefbb4501ca427"
+  dependencies:
+    axios contentful/axios#fix/https-via-http-proxy
+    es6-promise "^4.0.5"
+    lodash "^4.17.4"
+    npmlog "^4.0.2"
+    platform "1.3.3"
+    qs "^6.1.0"
+
+contentful@^4.4.4:
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/contentful/-/contentful-4.4.4.tgz#80e32ebe4bdecad572dcfdb9870e026d8dceed21"
+  dependencies:
+    axios "~0.15.3"
+    contentful-sdk-core "^3.10.1"
+    es6-promise "^4.0.5"
+    json-stringify-safe "^5.0.1"
+    lodash "^4.17.4"
+
 convert-source-map@^1.3.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.0.tgz#9acd70851c6d5dfdd93d9282e5edf94a03ff46b5"
@@ -1549,7 +1506,7 @@ dateformat@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-2.0.0.tgz#2743e3abb5c3fc2462e527dca445e04e9f4dee17"
 
-debug@*, debug@2, debug@^2.1.3, debug@^2.2.0, debug@^2.6.3:
+debug@*, debug@2, debug@^2.1.3, debug@^2.2.0, debug@^2.4.5, debug@^2.6.3:
   version "2.6.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.6.tgz#a9fa6fbe9ca43cf1e79f73b75c0189cbb7d6db5a"
   dependencies:
@@ -1947,6 +1904,10 @@ es-to-primitive@^1.1.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.1"
 
+es6-promise@^4.0.5:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.1.0.tgz#dda03ca8f9f89bc597e689842929de7ba8cebdf0"
+
 escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
@@ -2244,6 +2205,18 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
+
+follow-redirects@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.0.0.tgz#8e34298cbd2e176f254effec75a1c78cc849fd37"
+  dependencies:
+    debug "^2.2.0"
+
+follow-redirects@^1.2.3:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.2.4.tgz#355e8f4d16876b43f577b0d5ce2668b9723214ea"
+  dependencies:
+    debug "^2.4.5"
 
 for-in@^0.1.3:
   version "0.1.8"
@@ -3385,7 +3358,7 @@ json-stable-stringify@^1.0.1:
   dependencies:
     jsonify "~0.0.0"
 
-json-stringify-safe@~5.0.1:
+json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
@@ -3452,22 +3425,6 @@ karma-jasmine-html-reporter@^0.2.2:
 karma-jasmine@^1.0.2, karma-jasmine@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-1.1.0.tgz#22e4c06bf9a182e5294d1f705e3733811b810acf"
-
-karma-sourcemap-loader@^0.3.7:
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/karma-sourcemap-loader/-/karma-sourcemap-loader-0.3.7.tgz#91322c77f8f13d46fed062b042e1009d4c4505d8"
-  dependencies:
-    graceful-fs "^4.1.2"
-
-karma-webpack@^2.0.0:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/karma-webpack/-/karma-webpack-2.0.3.tgz#39cebf5ca2580139b27f9ae69b78816b9c82fae6"
-  dependencies:
-    async "~0.9.0"
-    loader-utils "^0.2.5"
-    lodash "^3.8.0"
-    source-map "^0.1.41"
-    webpack-dev-middleware "^1.0.11"
 
 karma@~1.6.0:
   version "1.6.0"
@@ -3599,7 +3556,7 @@ loader-runner@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
 
-loader-utils@^0.2.16, loader-utils@^0.2.5, loader-utils@~0.2.2:
+loader-utils@^0.2.16, loader-utils@~0.2.2:
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
   dependencies:
@@ -4722,6 +4679,10 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
+platform@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/platform/-/platform-1.3.3.tgz#646c77011899870b6a0903e75e997e8e51da7461"
+
 portfinder@^1.0.9, portfinder@~1.0.12:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
@@ -5141,7 +5102,7 @@ qjobs@^1.1.4:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/qjobs/-/qjobs-1.1.5.tgz#659de9f2cf8dcc27a1481276f205377272382e73"
 
-qs@6.4.0, qs@~6.4.0:
+qs@6.4.0, qs@^6.1.0, qs@~6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
@@ -5892,14 +5853,6 @@ source-list-map@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-1.1.2.tgz#9889019d1024cce55cdc069498337ef6186a11a1"
 
-source-map-loader@^0.1.5:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/source-map-loader/-/source-map-loader-0.1.6.tgz#c09903da6d73b9e53b7ed8ee5245597051e98e91"
-  dependencies:
-    async "^0.9.0"
-    loader-utils "~0.2.2"
-    source-map "~0.1.33"
-
 source-map-loader@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/source-map-loader/-/source-map-loader-0.2.1.tgz#48126be9230bd47fad05e46a8c3c2e3d2dabe507"
@@ -5914,7 +5867,7 @@ source-map-support@>=0.1.0, source-map-support@^0.4.0, source-map-support@^0.4.2
   dependencies:
     source-map "^0.5.6"
 
-source-map@0.1.x, source-map@^0.1.41, source-map@~0.1.33, source-map@~0.1.7:
+source-map@0.1.x, source-map@~0.1.33, source-map@~0.1.7:
   version "0.1.43"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   dependencies:
@@ -6385,15 +6338,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-"typescript@>=2.0.0 <2.3.0":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.2.2.tgz#606022508479b55ffa368b58fee963a03dfd7b0c"
-
 "typescript@>=2.0.0 <2.4.0", typescript@^2.1.5, typescript@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.2.tgz#f0f045e196f69a72f06b25fd3bd39d01c3ce9984"
 
-uglify-js@^2.6, uglify-js@^2.7.5, uglify-js@^2.8.5, uglify-js@~2.8.22:
+uglify-js@^2.6, uglify-js@^2.8.5, uglify-js@~2.8.22:
   version "2.8.24"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.24.tgz#48eb5175cf32e22ec11a47e638d7c8b4e0faf2dd"
   dependencies:
@@ -6652,7 +6601,7 @@ walk-sync@^0.3.1:
     ensure-posix-path "^1.0.0"
     matcher-collection "^1.0.0"
 
-watchpack@^1.2.0, watchpack@^1.3.1:
+watchpack@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.3.1.tgz#7d8693907b28ce6013e7f3610aa2a1acf07dad87"
   dependencies:
@@ -6695,7 +6644,7 @@ webdriver-manager@^12.0.1:
     semver "^5.3.0"
     xml2js "^0.4.17"
 
-webpack-dev-middleware@^1.0.11, webpack-dev-middleware@^1.10.2:
+webpack-dev-middleware@^1.10.2:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-1.10.2.tgz#2e252ce1dfb020dbda1ccb37df26f30ab014dbd1"
   dependencies:
@@ -6704,7 +6653,7 @@ webpack-dev-middleware@^1.0.11, webpack-dev-middleware@^1.10.2:
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
 
-webpack-dev-server@~2.4.2, webpack-dev-server@~2.4.5:
+webpack-dev-server@~2.4.5:
   version "2.4.5"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.4.5.tgz#31384ce81136be1080b4b4cde0eb9b90e54ee6cf"
   dependencies:
@@ -6732,7 +6681,7 @@ webpack-merge@^2.4.0:
   dependencies:
     lodash "^4.17.4"
 
-webpack-sources@^0.1.0, webpack-sources@^0.1.4:
+webpack-sources@^0.1.0:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.1.5.tgz#aa1f3abf0f0d74db7111c40e500b84f966640750"
   dependencies:
@@ -6745,31 +6694,6 @@ webpack-sources@^0.2.3:
   dependencies:
     source-list-map "^1.1.1"
     source-map "~0.5.3"
-
-webpack@~2.2.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.2.1.tgz#7bb1d72ae2087dd1a4af526afec15eed17dda475"
-  dependencies:
-    acorn "^4.0.4"
-    acorn-dynamic-import "^2.0.0"
-    ajv "^4.7.0"
-    ajv-keywords "^1.1.1"
-    async "^2.1.2"
-    enhanced-resolve "^3.0.0"
-    interpret "^1.0.0"
-    json-loader "^0.5.4"
-    loader-runner "^2.3.0"
-    loader-utils "^0.2.16"
-    memory-fs "~0.4.1"
-    mkdirp "~0.5.0"
-    node-libs-browser "^2.0.0"
-    source-map "^0.5.3"
-    supports-color "^3.1.0"
-    tapable "~0.2.5"
-    uglify-js "^2.7.5"
-    watchpack "^1.2.0"
-    webpack-sources "^0.1.4"
-    yargs "^6.0.0"
 
 webpack@~2.4.0:
   version "2.4.1"

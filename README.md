@@ -39,7 +39,7 @@ Project is hosted on AWS.S3 and uses AWS.CloudFront. Deploying requires AWS CLI 
 
 ### Deploy
 
-The following command builds project in production mode, uploads files to S3, and invalidates cache for the index.html:
+The following command builds project in production mode, uploads files to S3, and invalidates cache for the html files:
 
 ```shell
 yarn run deploy

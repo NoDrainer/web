@@ -5,34 +5,17 @@
     <h2>Testimonials</h2>
 
     <div>
-      <div class="super-action">91,500</div>
+      <div class="super-action">{{page.galonsSaved}}</div>
       <div class="action">Gallons Saved</div>
     </div>
 
-    <md-card>
+    <md-card *ngFor="let t of testimonials">
       <md-card-header>
-        <div md-card-avatar class="rev-0"></div>
-        <md-card-title>Darlene Demarest</md-card-title>
-        <md-card-subtitle>Peoria AZ</md-card-subtitle>
+        <md-card-title>{{t.fullName}}</md-card-title>
+        <md-card-subtitle>{{t.location}}</md-card-subtitle>
       </md-card-header>
 
-      <md-card-content>
-        <p>I can’t say enough what a wonderful experience I had hiring Russ with No Drainer to RO my pool. Deciding to go with cleaning my pool water using an RO process instead of a drain and refill turned out awesome. My before chemical test was like 5000ppm Total Dissolved Solids (TDS) and after only 850ppm also my CYA started out at 140ppm and after only 45ppm; that’s outstanding.  The water looks so crystal clear you want to get a glass and drink it.</p>
-        <p>Russ arrived on time, very professional in appearance, explains the process to you and set everything up in no time, including safety stands to make sure no one trips and falls over hoses. Even the little bit of water replaced went through the RO process before going into the pool; so every drop was filtered.</p>
-        <p>I love the fact my pool water is in better condition than a drain and refill could provide since that requires filling it back up with our AZ hard water which kind of defeats the purpose. I will be calling Russ when it comes time to clean my water again.</p>
-        <p>Thanks Russ for a fantastic job and learning experience.</p>
-      </md-card-content>
-    </md-card>
-
-    <md-card>
-      <md-card-header>
-        <md-card-title>Coleen Hager</md-card-title>
-        <md-card-subtitle>Peoria AZ</md-card-subtitle>
-      </md-card-header>
-
-      <md-card-content>
-        <p>I want to thank you for purifying my pool!!  It has been great.  The water quality is such a remarkable improvement.  Even the pool tester at Leslies could not believe how nice the water was.</p>
-        <p>I have recommended your services multiple times and will continue to do so.  You did a great job and I really appreciate how wonderful my pool is to swim in with all the hard chemicals removed!!</p>
+      <md-card-content [innerHTML]="t.body">
       </md-card-content>
     </md-card>
   </div>
