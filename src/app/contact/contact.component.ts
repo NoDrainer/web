@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -14,6 +14,7 @@ import {
 } from '@ngspot/ngx-errors-material';
 import { Angulartics2 } from 'angulartics2';
 import { catchError, of, tap } from 'rxjs';
+
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -37,6 +38,7 @@ import { environment } from '../../environments/environment';
   ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactComponent {
   private _fb = inject(FormBuilder);

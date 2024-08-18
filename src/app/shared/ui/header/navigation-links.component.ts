@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+
 import { NavigationLinkComponent } from './navigation-link.component';
 
 interface NdLink {
@@ -7,16 +8,15 @@ interface NdLink {
 }
 
 @Component({
-  selector: 'pd-navigation-links',
+  selector: 'nd-navigation-links',
   standalone: true,
   imports: [NavigationLinkComponent],
   template: `
     @for (item of links; track item.path) {
-    <pd-navigation-link
-      [path]="item.path"
-      [text]="item.text"
-      [isHamburger]="isHamburger()"
-    />
+      <nd-navigation-link
+        [path]="item.path"
+        [text]="item.text"
+        [isHamburger]="isHamburger()" />
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

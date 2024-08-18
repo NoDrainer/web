@@ -1,8 +1,9 @@
 import { AsyncPipe, NgClass } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Angulartics2GoogleAnalytics } from 'angulartics2';
 import { debounceTime, filter, map, tap } from 'rxjs';
+
 import { waterAnimation } from './app.animations.ts';
 import { FooterComponent } from './shared/ui/footer/footer.component.js';
 import { HeaderComponent } from './shared/ui/header/header.component';
@@ -25,6 +26,7 @@ import { ScrollToService } from './shared/utils/scrollTo';
   styleUrl: './app.component.scss',
   animations: [waterAnimation],
   providers: [ScrollToService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   private _angularticsGa = inject(Angulartics2GoogleAnalytics).startTracking();

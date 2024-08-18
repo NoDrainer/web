@@ -5,17 +5,17 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { NgOptimizedImage } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
   signal,
 } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
 
 import { mediaMatcher } from '../../utils/media-matcher';
 import { NavigationLinksComponent } from './navigation-links.component';
@@ -36,6 +36,7 @@ type ShrinkState = keyof typeof shrinkState;
     MatMenuModule,
     MatButtonModule,
     NavigationLinksComponent,
+    NgOptimizedImage,
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -57,7 +58,8 @@ export class HeaderComponent {
 
   @HostListener('window:scroll')
   scroll() {
-    const distanceY = window.pageYOffset || document.documentElement.scrollTop;
+    const distanceY = window.scrollY || document.documentElement.scrollTop;
+
     if (this.isGtSm()) {
       this.shrinkAnimationState.set(
         distanceY < this.shrinkOn ? 'normal' : 'small'

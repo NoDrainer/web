@@ -1,11 +1,10 @@
 @if (isGtSm()) {
-<div
-  class="water"
-  [@water]="url$ | async"
-  parallax
-  speed="4"
-  [initialPosY]="100"
-></div>
+  <div
+    class="water"
+    [@water]="url$ | async"
+    parallax
+    speed="4"
+    [initialPosY]="100"></div>
 }
 
 <div class="header-wrap" [ngClass]="{ 'gt-sm': isGtSm() }">

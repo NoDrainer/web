@@ -1,9 +1,10 @@
-
+@use '@angular/material' as mat;
+@use '../../css/material/theme' as theme;
 
 #s-2 {
-  // background-color: mat-color($accent, 200);
+  background-color: mat.get-theme-color(theme.$theme, primary, 80);
 
   .accent {
-    color: white;
+    color: mat.get-theme-color(theme.$theme, primary, 50);
   }
 }

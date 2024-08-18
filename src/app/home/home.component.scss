@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@use '../../css/material/material' as nd;
+@use '../../css/material/theme' as nd;
 
 #s-2 {
   background-color: mat.get-theme-color(nd.$theme, primary, 70);

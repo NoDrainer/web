@@ -14,11 +14,3 @@ $theme: mat.define-theme((
     brand-family: 'Lato',
   )
 ));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-:root {
-  @include mat.all-component-themes($theme);
-  @include mat.typography-hierarchy($theme);
-}

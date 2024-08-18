@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';
+
 import { ITestimonial, ITestimonialsPage } from './testimonials.model';
 
 @Component({
@@ -9,6 +10,7 @@ import { ITestimonial, ITestimonialsPage } from './testimonials.model';
   imports: [MatCardModule],
   templateUrl: './testimonials.component.html',
   styleUrls: ['./testimonials.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestimonialsComponent {
   private route = inject(ActivatedRoute);

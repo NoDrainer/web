@@ -3,7 +3,8 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": "ab7290f5-c3ae-4ca6-b14e-34d97c2990dc"
+    "analytics": "ab7290f5-c3ae-4ca6-b14e-34d97c2990dc",
+    "schematicCollections": ["@angular-eslint/schematics"]
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -89,6 +90,18 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "local-stats": {
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": {
+                "styles": true,
+                "scripts": true,
+                "vendor": true
+              },
+              "namedChunks": true,
+              "extractLicenses": false,
+              "statsJson": true
             }
           },
           "defaultConfiguration": "production"
@@ -122,6 +135,12 @@
             ],
             "styles": ["src/css/styles.scss"],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }

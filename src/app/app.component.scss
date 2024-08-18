@@ -1,3 +1,6 @@
+@use '@angular/material' as mat;
+@use '../css/material/theme' as theme;
+
 .water {
   position: fixed;
   top: 0;
@@ -29,24 +32,12 @@
 .header-wrap {
   background-color: white;
 
-  &::ng-deep {
-    #logo {
-      width: 80px;
-    }
-  }
-
   &.gt-sm {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 3;
-
-    &::ng-deep {
-      #logo {
-        width: auto;
-      }
-    }
   }
 }
 
@@ -81,7 +72,7 @@
 
       span {
         font-size: 62pt;
-        // color: mat-color($primary, 700);
+        color: mat.get-theme-color(theme.$theme, primary, 30);
         text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 0px 3px 3px #111;
       }
     }

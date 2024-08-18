@@ -2,10 +2,11 @@
   <div class="flex flex-wrap justify-center items-center">
     <img
       [@shrinkOnScroll]="shrinkAnimationState()"
-      src="logo/apple-icon-120x120.png"
+      ngSrc="logo/apple-icon-120x120.png"
       alt="logo"
-      id="logo"
-    />
+      width="120"
+      height="120"
+      id="logo" />
 
     <div class="title flex flex-col items-center">
       <div class="h1-wrapper">
@@ -16,14 +17,14 @@
     </div>
   </div>
 
-  <div class="flex flex-col items-end">
+  <div class="flex flex-col items-end gap-2">
     <div class="call-us hidden sm:flex flex-wrap justify-center">
       <div class="action">Call today for an estimate -&nbsp;</div>
       <a class="phone" href="tel:+16027913230">602.791.3230</a>
     </div>
 
     <nav class="hidden lg:flex flex-col sm:flex-row">
-      <pd-navigation-links />
+      <nd-navigation-links />
     </nav>
   </div>
 </div>
@@ -34,6 +35,6 @@
   </button>
 
   <mat-menu #menu="matMenu" class="mobile-menu">
-    <pd-navigation-links [isHamburger]="true" />
+    <nd-navigation-links [isHamburger]="true" />
   </mat-menu>
 </nav>
