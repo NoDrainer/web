@@ -1,47 +1,27 @@
 # NoDrainer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
-
-## Install locally
-
-### Prerequisites:
-* [Git](https://git-scm.com/downloads)
-* [NodeJs > 6.10.2](https://nodejs.org/en/download/)
-* [Yarn](https://yarnpkg.com/) installed globally: `npm i -g yarn`
-
-### Clone and set up:
-* Get repo: `git clone https://github.com/NoDrainer/web.git`
-* Install deps: `yarn`
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
 
 ## Development server
 
-* Dev: `yarn start`.
-* Prod: `yarn run start.prod`.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-* Dev: `yarn run build.dev`.
-* Prod: `yarn run build.prod`.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
-* `yarn test`
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Deploy to Production
+## Running end-to-end tests
 
-Project is hosted on AWS.S3 and uses AWS.CloudFront. Deploying requires AWS CLI installed and configured.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-### Prerequisites
+## Further help
 
-* [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) installed locally
-* Configure AWS defaults: `aws configure`
-* AWS preview.cloudfront enabled: `aws configure set preview.cloudfront true`
-
-### Deploy
-
-The following command builds project in production mode, uploads files to S3, and invalidates cache for the html files:
-
-```shell
-yarn run deploy
-```
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

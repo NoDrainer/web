@@ -1,0 +1,70 @@
+@use '@angular/material' as mat;
+@use '../../../../css/material/theme' as theme;
+
+:host > div {
+  padding: 20px;
+  box-shadow: 3px 3px 20px #064a7b;
+}
+
+.title {
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: mat.get-theme-color(theme.$theme, primary, 50);
+
+  div.h1-wrapper {
+    transform: scaleY(1.4);
+    margin-top: 15px;
+
+    h1 {
+      font-family: 'Scriptorama';
+      line-height: 1.4rem;
+      font-size: 2em;
+      white-space: nowrap;
+      margin: 0;
+      text-shadow: 0.5px 0.5px 0px #fff, -0.5px -0.5px 0px #fff, 0.5px 0.5px 3px #464646;
+    }
+  }
+
+  div.desc {
+    font-family: 'Scriptorama';
+    margin-top: 10px;
+    font-size: 1em;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+.call-us {
+  font-size: x-large;
+  text-align: center;
+
+  .action {
+    font-family: 'Lato';
+    font-size: smaller;
+    white-space: nowrap;
+  }
+
+  .phone {
+    // color: mat-color($primary);
+    color: mat.get-theme-color(theme.$theme, primary, 50);
+    font-weight: bold;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+}
+
+nav {
+  button {
+    //padding: 0 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    min-width: auto;
+  }
+
+  &.mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
+}

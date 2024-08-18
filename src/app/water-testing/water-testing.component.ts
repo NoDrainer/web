@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'nd-water-testing',
   templateUrl: './water-testing.component.html',
-  styleUrls: ['./water-testing.component.scss']
+  styleUrls: ['./water-testing.component.scss'],
 })
-export class WaterTestingComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class WaterTestingComponent {}

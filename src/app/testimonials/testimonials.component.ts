@@ -1,20 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';
-import { ITestimonial, ITestimonialsPage } from '../models/testimonial';
+import { ITestimonial, ITestimonialsPage } from './testimonials.model';
 
 @Component({
   selector: 'nd-testimonials',
+  standalone: true,
+  imports: [MatCardModule],
   templateUrl: './testimonials.component.html',
-  styleUrls: ['./testimonials.component.scss']
+  styleUrls: ['./testimonials.component.scss'],
 })
-export class TestimonialsComponent implements OnInit {
-  testimonials: ITestimonial[];
-  page: ITestimonialsPage
-
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.testimonials = this.route.snapshot.data.resolved.testimonials;
-    this.page = this.route.snapshot.data.resolved.page;
-  }
+export class TestimonialsComponent {
+  private route = inject(ActivatedRoute);
+  testimonials: ITestimonial[] = this.route.snapshot.data['testimonials'];
+  page: ITestimonialsPage = this.route.snapshot.data['page'];
 }
