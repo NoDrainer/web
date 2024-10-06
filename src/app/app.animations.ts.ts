@@ -16,7 +16,7 @@ export const waterAnimation = trigger('water', [
   state('s-', style({ backgroundImage: 'url(/water/water6.jpg)' })),
   state('s-about', style({ backgroundImage: 'url(/water/water1.jpg)' })),
   state(
-    's-pool-cleaning-services-in-phoenix',
+    's-pool-cleaning-services-in-scottsdale',
     style({ backgroundImage: 'url(/water/water8.jpg)' })
   ),
   state('s-testimonials', style({ backgroundImage: 'url(/water/water3.jpg)' })),
@@ -37,7 +37,7 @@ export const waterAnimation = trigger('water', [
     animate('.5s ease-in'),
   ]),
 
-  transition('* => s-pool-cleaning-services-in-phoenix', [
+  transition('* => s-pool-cleaning-services-in-scottsdale', [
     animate('.5s ease-out', style({ opacity: 0 })),
     animate(1, style({ backgroundImage: 'url(/water/water8.jpg)' })),
     animate('.5s ease-in'),
