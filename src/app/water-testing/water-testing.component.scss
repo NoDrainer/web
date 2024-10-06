@@ -1,0 +1,6 @@
+@use '@angular/material' as mat;
+@use '../../css/material/theme' as nd;
+
+.tertiary {
+  color: mat.get-theme-color(nd.$theme, tertiary, 50);
+}

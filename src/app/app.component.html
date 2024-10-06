@@ -1,15 +1,18 @@
-<div class="water"
-     *ngIf="media.isActive('gt-sm')"
-     [@water]="url$ | async"
-     parallax speed="4" [initialPosY]="100">
-</div>
+@if (isGtSm()) {
+  <div
+    class="water"
+    [@water]="url$ | async"
+    parallax
+    speed="4"
+    [initialPosY]="100"></div>
+}
 
-<div class="header-wrap" ngClass.gt-sm="gt-sm">
+<div class="header-wrap" [ngClass]="{ 'gt-sm': isGtSm() }">
   <nd-header></nd-header>
 </div>
 
-<div fxLayout="column" fxFlexFill>
-  <div class="main-wrap" ngClass.gt-sm="gt-sm">
+<div class="flex flex-col flex-fill">
+  <div class="main-wrap" [ngClass]="{ 'gt-sm': isGtSm() }">
     <main>
       <router-outlet></router-outlet>
     </main>
@@ -19,8 +22,6 @@
       <span color="primary">PURIFY</span> it!
     </div>
   </div>
-
-  <div fxFlex></div>
 
   <nd-footer></nd-footer>
 </div>

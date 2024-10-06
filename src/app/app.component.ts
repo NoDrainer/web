@@ -1,91 +1,51 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { trigger, state, animate, transition, style } from '@angular/animations';
-import { ObservableMedia } from '@angular/flex-layout';
-import { Angulartics2GoogleAnalytics, Angulartics2 } from 'angulartics2';
-import { environment } from '../environments/environment';
-import { ScrollToService } from '../services/scrollTo';
-import { Observable } from 'rxjs/Observable';
+import { AsyncPipe, NgClass } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { Angulartics2GoogleAnalytics } from 'angulartics2';
+import { debounceTime, filter, map, tap } from 'rxjs';
 
-export function firstLoad(from, to) { return from == null; }
+import { waterAnimation } from './app.animations.ts';
+import { FooterComponent } from './shared/ui/footer/footer.component.js';
+import { HeaderComponent } from './shared/ui/header/header.component';
+import { mediaMatcher } from './shared/utils/media-matcher';
+import { ParallaxDirective } from './shared/utils/parallax.directive';
+import { ScrollToService } from './shared/utils/scrollTo';
 
 @Component({
   selector: 'nd-root',
+  standalone: true,
+  imports: [
+    AsyncPipe,
+    NgClass,
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    ParallaxDirective,
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('water', [
-      state('*', style({ opacity: 1 })),
-      state('null', style({ backgroundImage: 'url(/assets/water/water6.jpg)' })),
-      state('s-', style({ backgroundImage: 'url(/assets/water/water6.jpg)' })),
-      state('s-about', style({ backgroundImage: 'url(/assets/water/water1.jpg)' })),
-      state('s-testimonials', style({ backgroundImage: 'url(/assets/water/water3.jpg)' })),
-      state('s-testing', style({ backgroundImage: 'url(/assets/water/water2.jpg)' })),
-      state('s-contact', style({ backgroundImage: 'url(/assets/water/water7.jpg)' })),
-
-      transition(<any>firstLoad, [
-        animate(1000, style({ opacity: 1 })),
-      ]),
-
-      transition('* => s-', [
-        animate('.5s ease-out', style({ opacity: 0 })),
-        animate(1, style({ backgroundImage: 'url(/assets/water/water6.jpg)' })),
-        animate('.5s ease-in')
-      ]),
-
-      transition('* => s-about', [
-        animate('.5s ease-out', style({ opacity: 0 })),
-        animate(1, style({ backgroundImage: 'url(/assets/water/water1.jpg)' })),
-        animate('.5s ease-in')
-      ]),
-
-      transition('* => s-testimonials', [
-        animate('.5s ease-out', style({ opacity: 0 })),
-        animate(1, style({ backgroundImage: 'url(/assets/water/water3.jpg)' })),
-        animate('.5s ease-in')
-      ]),
-
-      transition('* => s-testing', [
-        animate('.5s ease-out', style({ opacity: 0 })),
-        animate(1, style({ backgroundImage: 'url(/assets/water/water2.jpg)' })),
-        animate('.5s ease-in')
-      ]),
-
-      transition('* => s-contact', [
-        animate('.5s ease-out', style({ opacity: 0 })),
-        animate(1, style({ backgroundImage: 'url(/assets/water/water7.jpg)' })),
-        animate('.5s ease-in')
-      ]),
-    ])
-  ]
+  styleUrl: './app.component.scss',
+  animations: [waterAnimation],
+  providers: [ScrollToService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit {
-  url$: Observable<string>;
+export class AppComponent {
+  private _angularticsGa = inject(Angulartics2GoogleAnalytics).startTracking();
+  private router = inject(Router);
+  private scrollToService = inject(ScrollToService);
+
+  isGtSm = mediaMatcher.isGreaterThan(960);
   isFirstLoad = true;
 
-  constructor(
-    angulartics2: Angulartics2,
-    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
-    private router: Router,
-    public media: ObservableMedia,
-    private scrollToService: ScrollToService
-  ) {
-    if (!environment.production) {
-      angulartics2.developerMode(true);
-    }
-  }
-
-  ngOnInit() {
-    this.url$ = this.router.events
-      .filter(x => x instanceof NavigationEnd)
-      .debounceTime(1)
-      .map((x: NavigationEnd) => x.url.replace('/', 's-'))
-      .do(x => {
-        const scrollToPos = this.isFirstLoad ? 0 : 215;
-        this.scrollToService.scrollTo(scrollToPos, 400);
-        if (this.isFirstLoad) {
-          this.isFirstLoad = false;
-        }
-      });
-  }
+  url$ = this.router.events.pipe(
+    filter((x) => x instanceof NavigationEnd),
+    debounceTime(1),
+    map((x: NavigationEnd) => x.url.replace('/', 's-')),
+    tap(() => {
+      const scrollToPos = this.isFirstLoad ? 0 : 215;
+      this.scrollToService.scrollTo(scrollToPos, 400);
+      if (this.isFirstLoad) {
+        this.isFirstLoad = false;
+      }
+    })
+  );
 }

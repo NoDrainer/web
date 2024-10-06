@@ -1,0 +1,40 @@
+<div class="flex flex-col lg:flex-row justify-between items-center">
+  <div class="flex flex-wrap justify-center items-center">
+    <img
+      [@shrinkOnScroll]="shrinkAnimationState()"
+      ngSrc="logo/apple-icon-120x120.png"
+      alt="logo"
+      width="120"
+      height="120"
+      id="logo" />
+
+    <div class="title flex flex-col items-center">
+      <div class="h1-wrapper">
+        <h1 class="unselectable">No Drainer</h1>
+      </div>
+
+      <div class="desc unselectable">Water Purification Services</div>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-end gap-2">
+    <div class="call-us hidden sm:flex flex-wrap justify-center">
+      <div class="action">Call today for an estimate -&nbsp;</div>
+      <a class="phone" href="tel:+16027913230">602.791.3230</a>
+    </div>
+
+    <nav class="hidden lg:flex flex-col sm:flex-row">
+      <nd-navigation-links />
+    </nav>
+  </div>
+</div>
+
+<nav class="lg:hidden mobile">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu" class="mobile-menu">
+    <nd-navigation-links [isHamburger]="true" />
+  </mat-menu>
+</nav>

@@ -1,4 +1,8 @@
-export const environment = {
+import { Env } from './model';
+
+export const environment: Env = {
   production: true,
-  contactEndpoint: 'https://ni9w1vprcj.execute-api.us-east-1.amazonaws.com/production/contact'
+  contactEndpoint: '',
+  contentfulSpace: '',
+  contentfulAccessToken: '',
 };

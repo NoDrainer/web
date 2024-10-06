@@ -1,4 +1,5 @@
-@import '../css/_vars.scss';
+@use '@angular/material' as mat;
+@use '../css/material/theme' as theme;
 
 .water {
   position: fixed;
@@ -15,13 +16,13 @@
 
   /* preload images for other pages */
   &:before {
-    content: url(/assets/water/water6.jpg)
-            url(/assets/water/water1.jpg)
-            url(/assets/water/water3.jpg)
-            url(/assets/water/water2.jpg)
-            url(/assets/water/water7.jpg);
+    content: url(/water/water6.jpg)
+            url(/water/water1.jpg)
+            url(/water/water3.jpg)
+            url(/water/water2.jpg)
+            url(/water/water7.jpg);
     /* partial fallback */
-    background-image: url(/assets/water/water6.jpg);
+    background-image: url(/water/water6.jpg);
     visibility: hidden;
     position: absolute;
     left: -999em;
@@ -31,24 +32,12 @@
 .header-wrap {
   background-color: white;
 
-  &#{"/deep/"} {
-    #logo {
-      width: 80px;
-    }
-  }
-
   &.gt-sm {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 3;
-
-    &#{"/deep/"} {
-      #logo {
-        width: auto;
-      }
-    }
   }
 }
 
@@ -58,7 +47,7 @@
   }
 
   main {
-    &#{"/deep/"} {
+    &::ng-deep {
       section {
         padding: 30px 10px;
       }
@@ -83,7 +72,7 @@
 
       span {
         font-size: 62pt;
-        color: mat-color($primary, 700);
+        color: mat.get-theme-color(theme.$theme, primary, 30);
         text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 0px 3px 3px #111;
       }
     }
@@ -96,7 +85,7 @@
       box-shadow: 0 -4px 5px #4e8eb9;
       min-height: 200px;
 
-      &#{"/deep/"} {
+      &::ng-deep {
         section {
           padding: 40px 0;
         }

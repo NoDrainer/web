@@ -1,20 +1,28 @@
-@import '../../css/_vars.scss';
+@use '@angular/material' as mat;
+@use '../../css/material/theme' as nd;
 
 #s-2 {
-  background-color: mat-color($accent, 200);
+  background-color: mat.get-theme-color(nd.$theme, primary, 70);
 }
 
 #s-3 {
-  background-color: mat-color($accent, 700);
+  background-color: mat.get-theme-color(nd.$theme, primary, 60);
   color: white;
   padding: 0 20px;
 }
 
 .call-us {
+  height: auto;
   font-size: 1.3em;
-  padding: 6px 16px;
+  text-align: center;
+  padding: 8px 16px;
   white-space: normal;
-  max-width: 80%;
+  max-width: min(80%, 450px);
   box-shadow: 0 6px 3px -2px rgba(0,0,0,.5), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   border-radius: 20px;
+}
+
+ul {
+  margin-left: 2rem;
+  list-style: disc;
 }
