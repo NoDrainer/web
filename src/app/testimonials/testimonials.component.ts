@@ -1,19 +1,14 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { ActivatedRoute } from '@angular/router';
 
-import { ITestimonial, ITestimonialsPage } from './testimonials.model';
+import { TestimonialsComponent } from '../shared/ui/testimonials/testimonials.component';
 
 @Component({
-  selector: 'nd-testimonials',
+  selector: 'nd-testimonials-page',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, TestimonialsComponent],
   templateUrl: './testimonials.component.html',
   styleUrls: ['./testimonials.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TestimonialsComponent {
-  private route = inject(ActivatedRoute);
-  testimonials: ITestimonial[] = this.route.snapshot.data['testimonials'];
-  page: ITestimonialsPage = this.route.snapshot.data['page'];
-}
+export class TestimonialsPageComponent {}

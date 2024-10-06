@@ -15,8 +15,7 @@
           novalidate
           [formGroup]="contactForm"
           (ngSubmit)="contact()"
-          class="flex flex-col gap-2"
-        >
+          class="flex flex-col gap-2">
           <mat-form-field>
             <mat-label>Your Name</mat-label>
 
@@ -64,12 +63,11 @@
           <br />
           <div class="flex items-center gap-4">
             <button
-              mat-raised-button
-              color="accent"
+              mat-flat-button
+              color="tertiary"
               type="submit"
-              [disabled]="isLoading"
-            >
-              {{ isLoading ? "Sending..." : "Send" }}
+              [disabled]="isLoading">
+              {{ isLoading ? 'Sending...' : 'Send' }}
             </button>
 
             <span>{{ feedback }}</span>

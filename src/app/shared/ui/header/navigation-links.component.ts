@@ -27,6 +27,7 @@ export class NavigationLinksComponent {
   links: NdLink[] = [
     { text: 'Home', path: '' },
     { text: 'About us', path: 'about' },
+    { text: 'Services', path: 'pool-cleaning-services-in-phoenix' },
     { text: 'Testimonials', path: 'testimonials' },
     { text: 'Water testing', path: 'testing' },
     { text: 'Contact us', path: 'contact' },

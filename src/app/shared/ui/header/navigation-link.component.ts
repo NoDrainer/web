@@ -9,16 +9,16 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [MatButtonModule, MatMenuItem, RouterLink, RouterLinkActive],
   template: `
     @if (isHamburger()) {
-      <button
+      <a
         mat-menu-item
         [routerLink]="path()"
         routerLinkActive="primary"
         [routerLinkActiveOptions]="{ exact: true }"
         type="button">
         {{ text() }}
-      </button>
+      </a>
     } @else {
-      <button
+      <a
         mat-button
         [routerLink]="path()"
         color="primary"
@@ -26,7 +26,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         [routerLinkActiveOptions]="{ exact: true }"
         type="button">
         {{ text() }}
-      </button>
+      </a>
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -20,3 +20,7 @@
   @include mat.all-component-themes(theme.$theme);
   @include mat.typography-hierarchy(theme.$theme);
 }
+
+.mat-tertiary {
+  @include mat.button-color(theme.$theme, $color-variant: tertiary);
+}

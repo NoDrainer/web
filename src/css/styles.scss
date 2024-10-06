@@ -48,7 +48,7 @@ body {
   height: 100%;
   margin: 0;
   color: #272727;
-  font-size: 14pt;
+  font-size: 14pt !important;
   line-height: 21pt;
   background-color: white;
 }
@@ -93,7 +93,7 @@ main ::ng-deep {
 }
 
 .accent {
-  color: mat.get-theme-color(theme.$theme, secondary, 50);;
+  color: mat.get-theme-color(theme.$theme, tertiary, 50);;
 }
 
 .unselectable {

@@ -4,20 +4,6 @@
 
     <h2>Testimonials</h2>
 
-    <div>
-      <div class="super-action">{{ page.galonsSaved }}</div>
-      <div class="action">Gallons Saved</div>
-    </div>
-
-    @for (t of testimonials; track $index) {
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{ t.fullName }}</mat-card-title>
-        <mat-card-subtitle>{{ t.location }}</mat-card-subtitle>
-      </mat-card-header>
-
-      <mat-card-content [innerHTML]="t.body" />
-    </mat-card>
-    }
+    <nd-testimonials></nd-testimonials>
   </div>
 </section>

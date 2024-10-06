@@ -3,17 +3,20 @@ import { Routes } from '@angular/router';
 
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { testimonialsResolver } from './testimonials/testimonials.resolver';
+import { ServicesComponent } from './services/services.component';
+import { TestimonialsPageComponent } from './testimonials/testimonials.component';
 import { WaterTestingComponent } from './water-testing/water-testing.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   {
+    path: 'pool-cleaning-services-in-phoenix',
+    component: ServicesComponent,
+  },
+  {
     path: 'testimonials',
-    component: TestimonialsComponent,
-    resolve: testimonialsResolver,
+    component: TestimonialsPageComponent,
   },
   { path: 'testing', component: WaterTestingComponent },
   {
