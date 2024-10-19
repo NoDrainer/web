@@ -39,7 +39,7 @@ export class AppComponent {
   url$ = this.router.events.pipe(
     filter((x) => x instanceof NavigationEnd),
     debounceTime(1),
-    map((x: NavigationEnd) => x.url.replace('/', 's-')),
+    map((x: NavigationEnd) => x.urlAfterRedirects.replace('/', 's-')),
     tap(() => {
       const scrollToPos = this.isFirstLoad ? 0 : 215;
       this.scrollToService.scrollTo(scrollToPos, 400);
